@@ -4,7 +4,8 @@
   "description": "this is nodejs weather app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index",
+    "prod": "node index"
   },
   "keywords": [
     "node",
