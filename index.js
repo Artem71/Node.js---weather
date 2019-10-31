@@ -12,14 +12,14 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
   const { city } = req.body
 
-  weatherRequest(city)
+  const {weather, error} = await weatherRequest(city)
+  console.log("Weather", weather)
+  console.log("error", error)
   res.render('index')
 })
-
-// 1239d38c25b99afa42c6d427af813b77
 
 app.listen(3000, () => {
   console.log('Server has started on port 3000')
